@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+*.log
+backend/uploads
+.npm-cache
+.prisma-cache
+.cache
+Library
