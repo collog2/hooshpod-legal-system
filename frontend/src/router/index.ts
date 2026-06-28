@@ -25,6 +25,31 @@ const router = createRouter({
           component: () => import('@/views/dashboard/DashboardView.vue'),
         },
         {
+          path: 'cases',
+          name: 'cases',
+          component: () => import('@/views/cases/CaseListView.vue'),
+        },
+        {
+          path: 'cases/new',
+          name: 'cases-new',
+          component: () => import('@/views/cases/CaseFormView.vue'),
+        },
+        {
+          path: 'cases/:id/edit',
+          name: 'cases-edit',
+          component: () => import('@/views/cases/CaseFormView.vue'),
+        },
+        {
+          path: 'cases/:id',
+          name: 'case-detail',
+          component: () => import('@/views/cases/CaseDetailView.vue'),
+        },
+        {
+          path: 'documents',
+          name: 'documents',
+          component: () => import('@/views/documents/DocumentListView.vue'),
+        },
+        {
           path: 'users',
           name: 'users',
           component: () => import('@/views/users/UserListView.vue'),

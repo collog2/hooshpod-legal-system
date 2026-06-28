@@ -1299,12 +1299,13 @@ Seed includes sample cases, contracts, notices (split across counsel owners), li
 
 1. ✅ Docker + Prisma schema + migrations + seed (User model only in phase 1)
 2. ✅ Auth module + users module
-3. Cases, Contracts, Notices (shared patterns)
-4. Generic Tasks, Deadlines, Documents, ActivityLog
-5. Dashboard + Search
-6. Offboarding
-7. Email reminders
-8. Frontend shell → feature pages module by module
+3. ✅ Cases + Documents (phase 2)
+4. Contracts, Notices (shared patterns)
+5. Generic Tasks, Deadlines, ActivityLog
+6. Dashboard + Search
+7. Offboarding
+8. Email reminders
+9. Frontend shell → feature pages module by module
 
 ---
 
@@ -1323,9 +1324,21 @@ Seed includes sample cases, contracts, notices (split across counsel owners), li
 | Vue initialization | ✅ | Vite, Pinia, Router, TailwindCSS, layout shell |
 | Frontend auth + users | ✅ | Login, dashboard placeholder, user list/form |
 
+### Phase 2 (complete)
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Prisma schema | ✅ | Added `Case`, `Document`, related enums |
+| Cases module | ✅ | CRUD + owner reassignment; RBAC + ownership enforcement |
+| Documents module | ✅ | Multer upload, disk storage, download, list, soft delete |
+| Access services | ✅ | `OwnershipService`, `PolymorphicEntityService` in `AccessModule` |
+| Seed data | ✅ | 3 sample cases, 2 sample documents with files on disk |
+| Frontend cases | ✅ | List, detail, create/edit with filters |
+| Frontend documents | ✅ | Global list + case detail panel with upload/download |
+
 ### Prisma schema phasing
 
-The full schema in §2 remains the target design. Phase 1 implements only the `User` model to avoid empty tables and broken relations. Additional models and enums will be added in subsequent migrations as their modules are implemented.
+The full schema in §2 remains the target design. Phases 1–2 implement `User`, `Case`, and `Document` models. `Contract`, `Notice`, `Task`, `Deadline`, and `ActivityLog` will be added in subsequent migrations.
 
 ### Architecture adjustments from phase 1
 
@@ -1337,4 +1350,4 @@ The full schema in §2 remains the target design. Phase 1 implements only the `U
 
 ---
 
-**Status: Phase 1 implemented.** Awaiting approval to continue with Cases, Contracts, and Notices.
+**Status: Phase 2 implemented (Cases + Documents).** Awaiting approval to continue with Contracts and Notices.

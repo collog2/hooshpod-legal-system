@@ -15,6 +15,8 @@
 
 	const navItems: NavItem[] = [
 		{ label: "Dashboard", to: "/dashboard", name: "dashboard" },
+		{ label: "Cases", to: "/cases", name: "cases" },
+		{ label: "Documents", to: "/documents", name: "documents" },
 		{ label: "Users", to: "/users", name: "users", roles: ["ADMIN", "MANAGER"] },
 	]
 
@@ -31,6 +33,10 @@
 	function isActive(item: NavItem) {
 		if (item.name === "users") {
 			return route.path.startsWith("/users")
+		}
+
+		if (item.name === "cases") {
+			return route.path.startsWith("/cases")
 		}
 
 		return route.name === item.name || route.path.startsWith(`/${item.name}`)

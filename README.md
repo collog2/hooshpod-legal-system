@@ -56,7 +56,9 @@ npm run dev
 - Docker Compose (postgres, backend, frontend)
 - Authentication (JWT login, `/auth/me`)
 - Users (CRUD with RBAC; soft delete)
-- Vue shell (login, dashboard placeholder, user management UI)
+- Cases (CRUD with ownership-based access; soft delete)
+- Documents (upload, download, list, delete with Multer + disk storage)
+- Vue shell (login, dashboard placeholder, cases, documents, user management UI)
 
 ## Environment variables
 

@@ -26,6 +26,8 @@ services:
       JWT_EXPIRES_IN: 8h
       PORT: 3000
       CORS_ORIGIN: http://localhost:5173
+      UPLOAD_DIR: /app/uploads
+      MAX_UPLOAD_SIZE_MB: 25
     volumes:
       - uploads:/app/uploads
     ports:
